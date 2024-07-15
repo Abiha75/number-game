@@ -3,6 +3,12 @@ import random
 
 st.title('Welcome to Number guessing game')
 
+st.write('Choose one...')
+
+btn_choice1 = st.button('guess b/w 1 and 4')
+
+btn_choice2 = st.button('guess b/w 5 and 7')
+
 num = random.randrange(1, 5)
 
 txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
