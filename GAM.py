@@ -9,9 +9,8 @@ btn_choice1 = st.button('guess b/w 1 and 4')
 if btn_choice1:
     num = random.randrange(1, 5)
 
-    txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1)):
+    txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
-    if txt_guess:
     if txt_guess == num:
         st.write('You win')
         st.balloons()
@@ -30,8 +29,7 @@ if btn_choice2:
     num1 = random.randrange(5, 8)
 
     txt_guess2 = int(st.text_input('Enter a number between 5 and 7: ', 1))
-
-    if txt_guess2:
+    
         if txt_guess2 == num or txt_guess2 == num1:
             st.write('You win')
             st.balloons()
