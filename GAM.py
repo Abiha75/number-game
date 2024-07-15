@@ -17,13 +17,13 @@ if option == "b/w 1 and 4":
     txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
     btn_guess = st.button('Make a guess')
-
-    if txt_guess == num:
-        st.write('You win')
-        st.balloons()
-    else:
-        html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
-        st.markdown(html_str, unsafe_allow_html=True)   
+    if btn_guess:
+        if txt_guess == num:
+            st.write('You win')
+            st.balloons()
+        else:
+            html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
+            st.markdown(html_str, unsafe_allow_html=True)   
     st.write('The number is ', num)
 
 
@@ -37,14 +37,16 @@ elif option == "b/w 5 and 7":
     txt_guess2 = int(st.text_input('Enter a number between 5 and 7: ', 1))
 
     btn_guess = st.button('Make a guess')
-    
-        if txt_guess2 == num1:
-            st.write('You win')
-            st.balloons()
-        else:
-            html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
-            st.markdown(html_str, unsafe_allow_html=True)
-st.write('The number is', num1)
+
+    if btn_guess:
+        
+            if txt_guess2 == num1:
+                st.write('You win')
+                st.balloons()
+            else:
+                html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
+                st.markdown(html_str, unsafe_allow_html=True)
+    st.write('The number is', num1)
 
 
 with st.expander("Help..."):
