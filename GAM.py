@@ -11,14 +11,15 @@ if btn_choice1:
 
     txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
-    if txt_guess == num:
+     if txt_guess:
+        txt_guess = int(txt_guess)
+        if txt_guess == num:
         st.write('You win')
         st.balloons()
     else:
         html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
         st.markdown(html_str, unsafe_allow_html=True)   
-        
-st.write('The number is ', num)
+    st.write('The number is ', num)
 
 
 
@@ -30,14 +31,16 @@ if btn_choice2:
 
     txt_guess2 = int(st.text_input('Enter a number between 5 and 7: ', 1))
     
-        if txt_guess2 == num or txt_guess2 == num1:
-            st.write('You win')
-            st.balloons()
+        if txt_guess2:
+            txt_guess2 = int(txt_guess2)
+            if txt_guess2 == num1:
+                st.write('You win')
+                st.balloons()
         else:
             html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
             st.markdown(html_str, unsafe_allow_html=True)
-        
 st.write('The number is', num1)
+
 
 with st.expander("Help..."):
     st.write('''
