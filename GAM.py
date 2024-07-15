@@ -17,11 +17,12 @@ if btn_guess:
         st.balloons()
     else:
         
-        html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
-        st.markdown(html_str, unsafe_allow_html=True)
+        st.write('sorry. Try again.')
         
 btn_show = st.button('show Number')
 
 if btn_show:
     st.write('The number is ', num)
+
+
     
