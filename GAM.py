@@ -25,7 +25,9 @@ if btn_choice1:
         st.balloons()
     else:
         html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
-        st.markdown(html_str, unsafe_allow_html=True)    
+        st.markdown(html_str, unsafe_allow_html=True)   
+        
+st.write('The numbers are ', num)
 
 if btn_choice2:
     if txt_guess2 == num or txt_guess2 == num1:
@@ -35,7 +37,7 @@ if btn_choice2:
         html_str = f""" <h1 style='text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
         st.markdown(html_str, unsafe_allow_html=True)
         
-st.write('The numbers are ', num, 'and ', num1)
+st.write('The numbers are ', num1)
 
 with st.expander("Help..."):
     st.write('''
