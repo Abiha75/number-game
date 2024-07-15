@@ -9,7 +9,7 @@ txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
 num1 = random.randrange(5, 7)
 
-txt_guess = int(st.text_input('Enter a number between 5 and 7: ', 1))
+txt_guess2 = int(st.text_input('Enter a number between 5 and 7: ', 1))
 
 btn_start = st.button('start again')
 
