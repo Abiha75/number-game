@@ -6,12 +6,13 @@ st.title('Welcome to Number guessing game')
 st.write('Choose one...')
 
 btn_choice1 = st.button('guess b/w 1 and 4')
+btn_choice2 = st.button('guess b/w 5 and 7')
 if btn_choice1:
     num = random.randrange(1, 5)
 
     txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
-    btn_guess = st.button('Make a guess)
+    btn_guess = st.button('Make a guess')
 
     if txt_guess == num:
         st.write('You win')
@@ -24,14 +25,14 @@ if btn_choice1:
 
 
 
-btn_choice2 = st.button('guess b/w 5 and 7')
-if btn_choice2: 
+
+else: 
 
     num1 = random.randrange(5, 8)
 
     txt_guess2 = int(st.text_input('Enter a number between 5 and 7: ', 1))
 
-    btn_guess = st.button('Make a guess)
+    btn_guess = st.button('Make a guess')
     
         if txt_guess2 == num1:
             st.write('You win')
