@@ -16,7 +16,7 @@ if btn_guess:
         st.write('You win')
         st.balloons()
     else:
-        html_str = f""" <h1 style='font size= 10; text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
+        html_str = f""" <h1 style='font-size= 10px; text-align: left; color: #FF4433;'> sorry. Try again. </h1> """
         st.markdown(html_str, unsafe_allow_html=True)
         
 btn_show = st.button('show Number')
