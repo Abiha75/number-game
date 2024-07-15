@@ -3,7 +3,7 @@ import random
 
 st.title('Welcome to Number guessing game')
 
-option = st.selection(
+option = st.selectbox(
     "Pick one....",
     ("b/w 1 and 4", "b/w 5 and 7"),
     index = none,
