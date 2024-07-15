@@ -3,11 +3,15 @@ import random
 
 st.title('Welcome to Number guessing game')
 
-st.write('Choose one...')
+option = st.selection(
+    "Pick one....",
+    ("b/w 1 and 4", "b/w 5 and 7"),
+    index = none,
+    placeholder = "select game mode...",
+)
 
-btn_choice1 = st.button('guess b/w 1 and 4')
-btn_choice2 = st.button('guess b/w 5 and 7')
-if btn_choice1:
+    
+if option == "b/w 1 and 4":
     num = random.randrange(1, 5)
 
     txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
@@ -26,7 +30,7 @@ if btn_choice1:
 
 
 
-else: 
+elif option == "b/w 5 and 7": 
 
     num1 = random.randrange(5, 8)
 
