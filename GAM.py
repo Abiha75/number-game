@@ -28,10 +28,11 @@ btn_show = st.button('show Number')
 if btn_show:
     st.write('The number is ', num, 'and ', num1)
 
-with st.expander("Help...")('
+with st.expander("Help..."):
+    st.write('''
  This game will randomly choose a number between 1 and 4 for the first box, and 5 and 7 for the second box.
  Try to guess a number between 1 and 4 for the first box, and 5 and 7 for the second box to see if you can guess the same number.
- Press the button make a guess and if you get either of them right you win')
+ Press the button make a guess and if you get either of them right you win''')
 
 
     
