@@ -16,7 +16,7 @@ btn_start = st.button('start again')
 btn_guess = st.button('Make a guess')
 
 if btn_guess:
-    if txt_guess == num or num1:
+    if txt_guess == num or txt_guess2 == num1:
         st.write('You win')
         st.balloons()
     else:
@@ -26,7 +26,7 @@ if btn_guess:
 btn_show = st.button('show Number')
 
 if btn_show:
-    st.write('The number is ', num)
+    st.write('The number is ', num, 'and ', num1)
 
 
     
