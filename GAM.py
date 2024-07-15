@@ -3,11 +3,11 @@ import random
 
 st.title('Welcome to Number guessing game')
 
-num = random.randrange(1, 4)
+num = random.randrange(1, 5)
 
 txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
-num1 = random.randrange(5, 7)
+num1 = random.randrange(5, 8)
 
 txt_guess2 = int(st.text_input('Enter a number between 5 and 7: ', 1))
 
