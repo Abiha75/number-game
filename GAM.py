@@ -5,12 +5,12 @@ st.title('Welcome to Number guessing game')
 
 st.write('Choose one...')
 
-def btn_choice1 = st.button('guess b/w 1 and 4')
+def guess b/w 1 and 4 ();
     num = random.randrange(1, 5)
 
     txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1)):
 
-    if btn_choice1:
+    if txt_guess:
     if txt_guess == num:
         st.write('You win')
         st.balloons()
