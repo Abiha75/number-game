@@ -8,7 +8,7 @@ final_vd = pd.read_csv(r'./final_top5.csv')
 
 with st.sidebar:
   option = st.selectbox(
-  "Please slect your Type:"
+  'Please select your Type:',
   ('CVA', 'IHD', 'CM', 'ARR', 'VD', 'CMD'))
 
 final_arr_short = final_vd[final_vd.Condition == option]
