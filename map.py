@@ -7,7 +7,8 @@ from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_cav(r'./final_top51.cav')
 
-with st.selectbox(
+with st.sidebar:
+  option = st.selectbox(
   "Please slect your Type:"
   ('CVA', 'IHD', 'CM', 'ARR', 'VD', 'CMD'))
 
