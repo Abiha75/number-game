@@ -28,6 +28,7 @@ for i in df_genes:
                                shape = "diamond",
                                color = '#0000BB'
                               )
+                        )
 df_disease = pd.DatatFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_diseases.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
