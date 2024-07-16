@@ -1,2 +1,4 @@
 streamlit
-agraph
+streamlit_agraph
+pandas
+streamlit_agraph.config
