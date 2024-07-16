@@ -43,7 +43,7 @@ for indec, row in df_disease.iterrows():
                         )
 
 df_connections = final_arr_short.filter(items=['Protein', 'neighbour_name']).drop_duplicates()
-d_connectios = df_connections[df_connections.neighbour_name !='na']
+d_connections = df_connections[df_connections.neighbour_name !='na']
 for index, row in df_connections.iterrows():
           edges.append( Edge(source = row['Protein'],
                         label = "--",
