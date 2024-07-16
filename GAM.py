@@ -7,7 +7,7 @@ option = st.selectbox(
    "Would you like to guess between 1 and 4, or 5 and 7?",
    ("b/w 1 and 4", "b/w 5 and 7"),
    index=None,
-   placeholder="Select contact method...",
+   placeholder="Select game mode...",
 )
     
 if option == "b/w 1 and 4":
