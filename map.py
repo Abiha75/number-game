@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
-final_vd = pd.read_cav(r'./final_top51.cav')
+final_vd = pd.read_csv(r'./final_top51.csv')
 
 with st.sidebar:
   option = st.selectbox(
@@ -23,14 +23,14 @@ st.title('Knowledge graph')
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
             nodes.append( Node(id=df_genes[i],
-                          label=def_genes[i],
+                          label=df_genes[i],
                                size = 25,
                                shape = "diamond",
                                color = '#0000BB'
                               )
                         )
-df_disease = pd.DatatFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
-df_disease = df_diseases.sort_index(axis = 0, ascending=True)
+df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
+df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
 for indec, row in df_disease.iterrows():
 
