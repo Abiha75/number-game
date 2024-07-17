@@ -10,13 +10,14 @@ with st.sidebar:
   option = st.selectbox(
     'Would you like to look at diseases or comorbidity?',
     ('disease', 'comorbidity'))
+  
 
 if option == "disease":
   
-with st.sidebar:
-  option = st.selectbox(
-  'Please select your Type:',
-  ('CVA', 'IHD', 'CM', 'ARR', 'VD', 'CHD'))
+  with st.sidebar:
+    option = st.selectbox(
+    'Please select your Type:',
+    ('CVA', 'IHD', 'CM', 'ARR', 'VD', 'CHD'))
 
 final_arr_short = final_vd[final_vd.Condition == option]
 
