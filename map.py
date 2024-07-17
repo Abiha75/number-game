@@ -11,7 +11,7 @@ with st.sidebar:
     'Would you like to look at diseases or comorbidity?',
     ('disease', 'comorbidity'))
 
-if 
+if option == "disease"
 with st.sidebar:
   option = st.selectbox(
   'Please select your Type:',
