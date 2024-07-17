@@ -6,24 +6,23 @@ from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top51.csv')
 
+types_n = final_vd['node_type'].unique()
+
 with st.sidebar:
-  option_type = st.selectbox(
-    'Would you like to look at diseases or comorbidity?',
-    ('disease', 'comorbidity'))
+    option = st.selectbox(
+    'Please select your Type:',
+    types_n)
 
-if option_type == "disease":
-  with st.sidebar:
-    option = st.selectbox(
-    'Please select your Type:',
-    ('CVA', 'IHD', 'CM', 'ARR', 'VD', 'CHD'))
-else:
-  with st.sidebar:
-    option = st.selectbox(
-    'Please select your Type:',
-    ('heart failure', 'liver dysfunction', 'cancer', 'liver fibrosis', 'kidney dysfunction'))
+ 
+final_arr_short1 = final_vd[final_vd.node_type == option]
+types_u = final_arr_short1['Condition'].unique()
+if option:
+    with st.sidebar:
+        option2 = st.selectbox(
+        'Please select your Type:',
+        types_u)    
     
-
-final_arr_short = final_vd[final_vd.Condition == option]
+final_arr_short = final_arr_short1[final_arr_short1.Condition == option2]
 
 nodes = []
 edges = []
@@ -39,7 +38,7 @@ for i in df_genes:
                       shape="diamond",
                       color='#0000BB'))
 
-for option = "diseases":
+
 df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
@@ -52,21 +51,6 @@ for index, row in df_disease.iterrows():
                                color = '#bf9b30'
                               )
                         )
-
-for option == "comorbidity":
-df_coMorbid = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
-df_coMorbid = df_coMorbid.sort_index(axis = 0, ascending=True)
-df_coMorbid = df_coMorbid[df_coMorbid.name !='na']
-for index, row in df_coMorbid.iterrows():
-
-            nodes.append( Node2(id = row['name'],
-                          label = row['name'],
-                          size = 10*row['count'],
-                               shape = "square",
-                               color = '#bf9b30'
-                              )
-                        )
-
 
 df_condition = dict()
 df_condition = dict(enumerate(final_arr_short.Condition.unique()))
