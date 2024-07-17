@@ -75,6 +75,6 @@ config.save("config.json")
 
 config = Config(from_json="config.json")
 
-return_value - agraph(nodes=nodes,
+return_value = agraph(nodes=nodes,
                       edges-edges,
-                      config=config )
+                      config=config)
