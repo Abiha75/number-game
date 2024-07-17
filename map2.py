@@ -89,12 +89,12 @@ return_value = agraph(nodes=nodes,
 
 
 
-elif option == "comorbidity":
+elif:
 
-with st.sidebar:
-  option = st.selectbox(
-  'Please select your Type:',
-  ('heart faliure', 'liver dysfunction', 'cancer', 'liver fibrosis', 'kidney dysfunction'))
+  with st.sidebar:
+    option = st.selectbox(
+    'Please select your Type:',
+    ('heart faliure', 'liver dysfunction', 'cancer', 'liver fibrosis', 'kidney dysfunction'))
 
 final_arr_short = final_vd[final_vd.Condition == option]
 
