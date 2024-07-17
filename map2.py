@@ -39,16 +39,34 @@ for i in df_genes:
                       shape="diamond",
                       color='#0000BB'))
 
-df_counts = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
-df_counts = df_counts.sort_index(axis=0, ascending=True)
-df_counts = df_counts[df_counts.name != 'na']
+for option 1:
+df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
+df_disease = df_disease.sort_index(axis = 0, ascending=True)
+df_disease = df_disease[df_disease.name !='na']
+for index, row in df_disease.iterrows():
 
-for index, row in df_counts.iterrows():
-    nodes.append(Node(id=row['name'],
-                      label=row['name'],
-                      size=10 * row['count'],
-                      shape="square",
-                      color='#bf9b30'))
+            nodes.append( Node1(id = row['name'],
+                          label = row['name'],
+                          size = 10*row['count'],
+                               shape = "square",
+                               color = '#bf9b30'
+                              )
+                        )
+
+for option 2:
+df_coMorbid = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
+df_coMorbid = df_coMorbid.sort_index(axis = 0, ascending=True)
+df_coMorbid = df_coMorbid[df_coMorbid.name !='na']
+for index, row in df_coMorbid.iterrows():
+
+            nodes.append( Node2(id = row['name'],
+                          label = row['name'],
+                          size = 10*row['count'],
+                               shape = "square",
+                               color = '#bf9b30'
+                              )
+                        )
+
 
 df_condition = dict()
 df_condition = dict(enumerate(final_arr_short.Condition.unique()))
