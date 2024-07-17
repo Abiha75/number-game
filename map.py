@@ -7,6 +7,12 @@ from streamlit_agraph.config import Config, ConfigBuilder
 final_vd = pd.read_csv(r'./final_top5.csv')
 
 with st.sidebar:
+  option = st.selection(
+    'Would you like to look at diseases or comorbidity?',
+    ('disease', 'comorbidity'))
+
+if 
+with st.sidebar:
   option = st.selectbox(
   'Please select your Type:',
   ('CVA', 'IHD', 'CM', 'ARR', 'VD', 'CHD'))
