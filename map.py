@@ -5,13 +5,6 @@ st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top5.csv')
-
-with st.sidebar:
-  option = st.selection(
-    'Would you like to look at diseases or comorbidity?',
-    ('disease', 'comorbidity'))
-
-if option == "disease":
   
 with st.sidebar:
   option = st.selectbox(
@@ -85,7 +78,5 @@ config = Config(from_json="config.json")
 return_value = agraph(nodes=nodes,
              edges=edges,
              config=config)
-
-else option == "comorbidity":
 
 
