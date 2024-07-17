@@ -39,7 +39,7 @@ for i in df_genes:
                       shape="diamond",
                       color='#0000BB'))
 
-for option 1:
+for option == "diseases":
 df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
@@ -53,7 +53,7 @@ for index, row in df_disease.iterrows():
                               )
                         )
 
-for option 2:
+for option == "comorbidity":
 df_coMorbid = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_coMorbid = df_coMorbid.sort_index(axis = 0, ascending=True)
 df_coMorbid = df_coMorbid[df_coMorbid.name !='na']
