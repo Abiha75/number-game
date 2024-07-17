@@ -44,7 +44,7 @@ df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
 for index, row in df_disease.iterrows():
 
-            nodes.append( Node1(id = row['name'],
+            nodes.append( Node(id = row['name'],
                           label = row['name'],
                           size = 10*row['count'],
                                shape = "square",
