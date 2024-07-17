@@ -9,7 +9,11 @@ final_vd = pd.read_csv(r'./final_top51.csv')
 with st.sidebar:
   option = st.selectbox(
     'Would you like to look at diseases or comorbidity?',
-    ('disease', 'comorbidity'))
+    ('disease', 'comorbidity')
+    index = none,
+    placeholder = "Select one....",
+)
+
   
 
 if option == "disease":
@@ -89,7 +93,7 @@ return_value = agraph(nodes=nodes,
 
 
 
-else:
+elif option == "comorbidity":
 
   with st.sidebar:
     option = st.selectbox(
