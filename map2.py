@@ -24,6 +24,10 @@ if option:
     
 final_arr_short = final_arr_short1[final_arr_short1.Condition == option2]
 
+res = final_arr_short1[final_arr_short1.Condition == option2].value_counts().to_frame('Disease_count').reset_index()
+
+st.bar_chart(res,x="Condition", y="Disease_count", color="Disease_count",)
+
 
 nodes = []
 edges = []
@@ -86,6 +90,4 @@ return_value = agraph(nodes=nodes,
                       edges=edges,
                       config=config)
 
-res = final_vd['Condition'].value_counts().to_frame('Disease_count').rename_axis('Condition').reset_index()
 
-st.bar_chart(res,x="Condition", y="Disease_count", color="Disease_count",)
