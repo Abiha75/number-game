@@ -89,7 +89,7 @@ return_value = agraph(nodes=nodes,
 
 
 
-elif:
+else:
 
   with st.sidebar:
     option = st.selectbox(
