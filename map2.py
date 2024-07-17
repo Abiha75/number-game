@@ -36,19 +36,31 @@ df_genes = dict()
 st.title('Knowledge graph')
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
-            nodes.append( Node1(id=df_genes[i],
+            nodes1.append( Node1(id=df_genes[i],
                           label=df_genes[i],
                                size = 25,
                                shape = "diamond",
                                color = '#0000BB'
                               )
                         )
+  
+df_genes=dict(enumerate(final_arr_short.Protein.unique()))
+for i in df_genes:
+            nodes2.append( Node2(id=df_genes[i],
+                          label=df_genes[i],
+                               size = 25,
+                               shape = "diamond",
+                               color = '#0000BB'
+                              )
+                        )
+
+
 df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
 for index, row in df_disease.iterrows():
 
-            nodes.append( Node1(id = row['name'],
+            nodes1.append( Node1(id = row['name'],
                           label = row['name'],
                           size = 10*row['count'],
                                shape = "square",
@@ -62,7 +74,7 @@ df_coMorbid = df_coMorbid.sort_index(axis = 0, ascending=True)
 df_coMorbid = df_coMorbid[df_coMorbid.name !='na']
 for index, row in df_coMorbid.iterrows():
 
-            nodes.append( Node2(id = row['name'],
+            nodes2.append( Node2(id = row['name'],
                           label = row['name'],
                           size = 10*row['count'],
                                shape = "square",
@@ -80,6 +92,17 @@ for k in df_condition:
                         color='#00FFFF'
                         )
                     ) 
+  
+df_condition=dict(enumerate(final_arr_short.Condition.unique()))
+for k in df_condition:
+            nodes2.append( Node2(id=df_condition[k],
+                        label=f"   {option}      ",
+                        size=200,
+                        shape="circle",
+                        color='#00FFFF'
+                        )
+                    ) 
+
 
 df_connections = final_arr_short.filter(items=['Protein', 'neighbour_name']).drop_duplicates()
 df_connections = df_connections[df_connections.neighbour_name !='na']
