@@ -11,7 +11,8 @@ with st.sidebar:
     'Would you like to look at diseases or comorbidity?',
     ('disease', 'comorbidity'))
 
-if option == "disease"
+if option == "disease":
+  
 with st.sidebar:
   option = st.selectbox(
   'Please select your Type:',
@@ -84,3 +85,7 @@ config = Config(from_json="config.json")
 return_value = agraph(nodes=nodes,
              edges=edges,
              config=config)
+
+else option == "comorbidity":
+
+
