@@ -27,7 +27,8 @@ else:
 
 final_arr_short = final_vd[final_vd.Condition == option]
 
-nodes = []
+nodes1 = []
+nodes2 = []
 edges = []
 
 df_genes = dict()
@@ -35,7 +36,7 @@ df_genes = dict()
 st.title('Knowledge graph')
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
-            nodes.append( Node(id=df_genes[i],
+            nodes.append( Node1(id=df_genes[i],
                           label=df_genes[i],
                                size = 25,
                                shape = "diamond",
@@ -47,7 +48,7 @@ df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name !='na']
 for index, row in df_disease.iterrows():
 
-            nodes.append( Node(id = row['name'],
+            nodes.append( Node1(id = row['name'],
                           label = row['name'],
                           size = 10*row['count'],
                                shape = "square",
@@ -61,7 +62,7 @@ df_coMorbid = df_coMorbid.sort_index(axis = 0, ascending=True)
 df_coMorbid = df_coMorbid[df_coMorbid.name !='na']
 for index, row in df_coMorbid.iterrows():
 
-            nodes.append( Node(id = row['name'],
+            nodes.append( Node2(id = row['name'],
                           label = row['name'],
                           size = 10*row['count'],
                                shape = "square",
@@ -72,7 +73,7 @@ for index, row in df_coMorbid.iterrows():
 df_condition = dict()
 df_condition=dict(enumerate(final_arr_short.Condition.unique()))
 for k in df_condition:
-            nodes.append( Node(id=df_condition[k],
+            nodes.append( Node1(id=df_condition[k],
                         label=f"   {option}      ",
                         size=200,
                         shape="circle",
