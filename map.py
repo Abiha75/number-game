@@ -35,7 +35,7 @@ for index, row in df_disease.iterrows():
 
             nodes.append( Node(id = row['name'],
                           label = row['name'],
-                          size = 10*row[['count'],
+                          size = 10*row['count'],
                                shape = "square",
                                color = '#bf9b30'
                               )
