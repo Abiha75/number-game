@@ -10,14 +10,12 @@ with st.sidebar:
   option = st.selectbox(
     'Would you like to look at diseases or comorbidity?',
     ('disease', 'comorbidity'),
-    index = none,
+    index=none,
     placeholder = "Select one....",
 )
 
   
-
 if option == "disease":
-  
   with st.sidebar:
     option = st.selectbox(
     'Please select your Type:',
@@ -93,8 +91,7 @@ return_value = agraph(nodes=nodes,
 
 
 
-elif option == "comorbidity":
-
+else:
   with st.sidebar:
     option = st.selectbox(
     'Please select your Type:',
