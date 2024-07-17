@@ -34,9 +34,7 @@ edges = []
 
 df_genes = dict()
 
-types_y = final_arr_short1['Condition'].unique
-
-st.title('Knowledge graph for', types_y )
+st.title('Knowledge graph for', final_arr_short )
 df_genes = dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
     nodes.append(Node(id=df_genes[i],
