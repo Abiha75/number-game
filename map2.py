@@ -10,7 +10,7 @@ types_n = final_vd['node_type'].unique()
 
 with st.sidebar:
     option = st.selectbox(
-    'Please select your Type:',
+    'Would you like to look at diseases or comorbidity?',
     types_n)
 
  
