@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score
 st.title('Machine Learning Demo')
 
 st.write("""
-# Explore different classifires and datasets
+# Explore different classifiers and datasets
 """)
 
 dataset_name = st.sidebar.selectbox(
@@ -35,7 +35,6 @@ def get_dataset(name):
       data == datasets.load_iris()
     elif name == 'Wine':
       data == datasets.load_wine()
-
     else: 
       data = datasets.load_breast_cancer()
     X = data.data
