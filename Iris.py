@@ -64,7 +64,7 @@ def add_paraeter_ui(clf_name):
     params['C'] = C
   elif clif_name == 'K Nearest Neighbor':
     K = st.sidebar.slider('K', 1, 15)
-    params['K] = K
+    params['K'] = K
   else:
     max_depth = st.sidebar.slider('max_depth', 2, 15)
     params['max_depth'] = max_depth
