@@ -97,7 +97,7 @@ x2 = X_projected[:, 1]
 fig = plt.figure()
 plt.scatter(x1, x2,
             c=y, alpha=0.8,
-            cmap = 'virdis')
+            cmap = 'viridis')
 
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2')
