@@ -32,9 +32,9 @@ classifier_name = st.sidebar.selectbox(
 def get_dataset(name):
     data = None
     if name == 'Iris':
-      data == datasets.load_iris()
+      data = datasets.load_iris()
     elif name == 'Wine':
-      data == datasets.load_wine()
+      data = datasets.load_wine()
     else: 
       data = datasets.load_breast_cancer()
     X = data.data
@@ -46,22 +46,22 @@ st.write('Shape of dataset:', X.shape)
 st.write('number of classes:', len(np.unique(y)))
 
 def get_classifier(clf_name, params):
-  clif = None
-  if clif_name == 'Support Vector Machine':
-    clif = SVC(C=params['C'])
+  clf = None
+  if clf_name == 'Support Vector Machine':
+    clf = SVC(C=params['C'])
   elif clf_name == 'K Nearest Neighbor':
-    clif = KNeighborsClassifier(n_neighbors=params['K'])
+    clf = KNeighborsClassifier(n_neighbors=params['K'])
   else:
     clf = clf = RandomForestClassifier(n_estimators=params['n_estimators'],
                                        max_depth=params['max_depth'], random_state=1234)
     return clf
 
-def add_paraeter_ui(clf_name):
+def add_parameter_ui(clf_name):
   params = dict()
   if clf_name == 'Support Vector Machine':
     C = st.sidebar.slider('C', 0.01, 10.0)
     params['C'] = C
-  elif clif_name == 'K Nearest Neighbor':
+  elif clf_name == 'K Nearest Neighbor':
     K = st.sidebar.slider('K', 1, 15)
     params['K'] = K
   else:
@@ -80,7 +80,7 @@ clf = get_classifier(classifier_name, params)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 
 clf.fit(X_train, y_train)
-y_pred = clif.predict(X_test)
+y_pred = clf.predict(X_test)
 
 acc = accuracy_score(y_test, y_pred)
 
@@ -90,7 +90,7 @@ st.write(f'Accuracy =', acc)
 #### PLOT DATASET ####
 # Project the data onto the 2 primary principal components
 pca = PCA(2)
-X_projectd = pca.fit_tansform(X)
+X_projectd = pca.fit_transform(X)
 
 x1 = X_projected[:, 0]
 x2 = X_projected[:, 1]
@@ -98,16 +98,12 @@ x2 = X_projected[:, 1]
 fig = plt.figure()
 plt.scatter(x1, x2,
             c=y, alpha=0.8,
-            camp = 'virdis')
+            cmap = 'virdis')
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 #plt.show()
-st.pylot(fig)
+st.pyplot(fig)
 
-
-
-
-      
 
