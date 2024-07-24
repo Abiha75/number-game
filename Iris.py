@@ -53,8 +53,8 @@ def get_classifier(clf_name, params):
     clf = KNeighborsClassifier(n_neighbors=params['K'])
   else:
     clf = clf = RandomForestClassifier(n_estimators=params['n_estimators'],
-                                       max_depth=params['max_depth'], random_state=1234)
-    return clf
+         max_depth=params['max_depth'], random_state=1234)
+return clf
 
 def add_parameter_ui(clf_name):
   params = dict()
@@ -69,8 +69,8 @@ def add_parameter_ui(clf_name):
     params['max_depth'] = max_depth
     n_estimators = st.sidebar.slider('n_estimators', 1, 100)
     params['n_estimators'] = n_estimators
-
-  return params
+  
+return params
 
 params = add_parameter_ui(classifier_name)
 
@@ -90,7 +90,7 @@ st.write(f'Accuracy =', acc)
 #### PLOT DATASET ####
 # Project the data onto the 2 primary principal components
 pca = PCA(2)
-X_projectd = pca.fit_transform(X)
+X_projected = pca.fit_transform(X)
 
 x1 = X_projected[:, 0]
 x2 = X_projected[:, 1]
@@ -99,6 +99,7 @@ fig = plt.figure()
 plt.scatter(x1, x2,
             c=y, alpha=0.8,
             cmap = 'virdis')
+
 plt.xlabel('Principal Component 1')
 plt.ylabel('Principal Component 2')
 plt.colorbar()
@@ -106,4 +107,13 @@ plt.colorbar()
 #plt.show()
 st.pyplot(fig)
 
+#st.title(f"##(dataset_name)Details')
+#st.dataframe(X)
 
+#st.dataframe(data.target_names)
+
+st.write(f"## {dataset_name} Details")
+st.write(data.data)  
+
+st.write(f"## {dataset_name} Target Names")
+st.write(data.target_names)  
